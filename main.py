@@ -45,7 +45,7 @@ while True:
 
     # API call
     response = client.chat.completions.create(
-        model="mistralai/devstral-2512",
+        model="inclusionai/ling-3.0-flash:free",
         messages=messages,
         max_tokens=300
     )
