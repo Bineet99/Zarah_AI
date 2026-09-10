@@ -128,23 +128,33 @@ if user_input:
             response = client.chat.completions.create(
                 model="inclusionai/ling-3.0-flash-sante:free",
                 messages=messages,
-                max_tokens=300
+                max_tokens=800,
+                extra_body={
+                    "reasoning": {
+                        "enabled": False
+                    }
+                }
             )
+
 
             # ---------- Safely Extract Response ----------
             if not response.choices:
+
                 reply = (
                     "Sorry, I couldn't generate a response right now. "
                     "Please try again. 💙"
                 )
 
             else:
+
                 content = response.choices[0].message.content
 
                 if content is not None and content.strip():
+
                     reply = content.strip()
 
                 else:
+
                     reply = (
                         "Hmm... I couldn't form a response that time 😅 "
                         "Try asking me again. 💙"
