@@ -45,7 +45,7 @@ while True:
 
     # API call
     response = client.chat.completions.create(
-        model="inclusionai/ling-3.0-flash:free",
+        model="nvidia/nemotron-3-ultra-550b-a55b:free",
         messages=messages,
         max_tokens=300
     )
